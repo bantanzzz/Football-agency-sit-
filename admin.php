@@ -11,12 +11,12 @@ if (!is_logged_in() || $_SESSION['role'] !== 'admin') {
 $admin_id = $_SESSION['user_id']; // Remove the duplicate declaration
 $agent_id = $admin_id; // Use admin_id for the queries
 
-$stats = [
+$stats = array(
     'players' => 0,
     'contracts' => 0,
     'pending' => 0,
     'reports' => 0
-];
+);
 
 // Get agent statistics - players
 $query = "SELECT COUNT(*) as total FROM Player WHERE agent_id = ?";
